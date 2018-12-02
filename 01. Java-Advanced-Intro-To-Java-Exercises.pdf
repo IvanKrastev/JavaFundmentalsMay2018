@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Spaceship2 {
+    public static void main(String[] args) {
+        // 100/100 in JUDGE!!!
+        Scanner input = new Scanner(System.in);
+
+        double width = input.nextDouble();
+        double lenght = input.nextDouble();
+        double height = input.nextDouble();
+        double averageAstronautHeight = input.nextDouble();
+
+        double spaceshipVolume = width*lenght*height;
+        double roomVolume = 2*2*(averageAstronautHeight + 0.4);
+        double numberOfAstronauts = spaceshipVolume / roomVolume;
+        numberOfAstronauts = Math.floor(numberOfAstronauts);
+
+        if(numberOfAstronauts >= 3 && numberOfAstronauts <= 10){
+            System.out.println("The spacecraft holds " + (int)numberOfAstronauts + " astronauts.");
+        }else if(numberOfAstronauts < 3){
+            System.out.println("The spacecraft is too small.");
+        }else if(numberOfAstronauts > 10){
+            System.out.println("The spacecraft is too big.");
+        }
+    }
+}
